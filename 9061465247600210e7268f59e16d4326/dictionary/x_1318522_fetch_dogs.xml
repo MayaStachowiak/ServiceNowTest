@@ -1,29 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
     <element db_object_id="6ef282da47600210e7268f59e16d4390" label="Dogs" max_length="40" name="x_1318522_fetch_dogs" type="collection">
-        <element attributes="edge_encryption_enabled=true" label="Adoption center" max_length="40" name="adoption_center" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Adoption center" max_length="40" name="adoption_center" reference="x_1318522_fetch_adoption_center" type="reference"/>
         <element label="Age" max_length="40" name="age" type="integer"/>
         <element attributes="edge_encryption_enabled=true" label="Bio" max_length="200" name="bio" type="string"/>
-        <element attributes="edge_encryption_enabled=true" label="Breed" max_length="40" name="breed" type="string"/>
         <element attributes="edge_encryption_enabled=true" label="Name" max_length="40" name="name" type="string"/>
         <element attributes="edge_encryption_enabled=true" choice="1" label="Neutered" max_length="40" name="neutered" type="choice">
             <choice>
-                <element inactive_on_update="false" label="now" value="now"/>
-                <element inactive_on_update="false" label="yes" value="yes"/>
+                <element inactive_on_update="false"/>
+                <element inactive_on_update="false" label="true" value="true"/>
             </choice>
         </element>
-        <element attributes="edge_encryption_enabled=true" label="Number" max_length="40" name="number" type="string"/>
-        <element attributes="edge_encryption_enabled=true" default="javascript:global.getNextObjNumberPadded();" label="Number 2" max_length="40" name="number_2" type="string"/>
-        <element attributes="edge_encryption_enabled=true" label="Picture" max_length="40" name="picture" type="string"/>
-        <element attributes="edge_encryption_enabled=true" choice="1" label="Shots" max_length="40" name="shots" type="choice">
+        <element default="1" label="Number" max_length="40" name="number" type="integer"/>
+        <element attributes="edge_encryption_enabled=true" label="Picture" max_length="40" name="picture" type="user_image"/>
+        <element choice="1" label="Shots" max_length="40" name="shots" type="choice">
             <choice>
-                <element inactive_on_update="false" label="no" value="no"/>
-                <element inactive_on_update="false" label="yes" value="yes"/>
+                <element inactive_on_update="false"/>
+                <element inactive_on_update="false" label="true" value="true"/>
             </choice>
         </element>
         <element attributes="edge_encryption_enabled=true" choice="1" label="Status" max_length="40" name="status" type="choice">
             <choice>
-                <element inactive_on_update="false" label="adoptowany" value="adoptowany"/>
-                <element inactive_on_update="false" label="wolny" value="wolny"/>
+                <element inactive_on_update="false" label="adopted" value="adopted"/>
+                <element inactive_on_update="false" label="not adopted" value="not adopted"/>
             </choice>
         </element>
     </element>
